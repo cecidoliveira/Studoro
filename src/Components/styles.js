@@ -43,12 +43,15 @@ export const DivTitle = styled.div`
     }
     
 `;
+export const DivList = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
 export const TitleTask = styled(Title)`
     padding-right: 120px;
 `;
 export const PahTask = styled.p`
     max-width: 290px;
-    display: flex;
     color: #ffffff;
     font-size: 30px;
 `;

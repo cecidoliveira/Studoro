@@ -25,7 +25,7 @@ function ModalTask({isOpen, onClose, setTasks, tasks}){
             duration: 2000,
             isClosable: true
         });
-        setTasks([...tasks, {id: counter, content: value}]);
+        setTasks([...tasks, {id: counter, content: value, ischecked: false}]);
         setCounter(counter + 1);
         onClose();
     }
