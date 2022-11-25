@@ -1,10 +1,12 @@
 import { Button } from "../styles";
 import { useToast } from '@chakra-ui/react';
+import { useState } from "react";
+
 
 function Buttons(props){
     let content,tempo;
     const toast = useToast();
-
+    const [isDisabled, setIsDisabled] = useState(false);
     function handleContTemp(){
         if(props.TempPomodoro == "00:00"){
             toast({
@@ -16,7 +18,7 @@ function Buttons(props){
             });
         }
         else{
-            ContTemp(props.setTemp,props.TempPomodoro)
+            setIsDisabled(true);
         }
     }
 
@@ -46,7 +48,7 @@ function Buttons(props){
                         handleContTemp();
                         break;
                     case 'Pausar':
-                        StopContTemp();
+                        
                         break;
                 }
                 break;
@@ -62,7 +64,7 @@ function Buttons(props){
    
 
     return(
-        <Button onClick={handleButton}>{content}</Button>
+        <Button onClick={handleButton} disabled={isDisabled}>{content}</Button>
     );
 }
 
