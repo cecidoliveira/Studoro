@@ -4,7 +4,7 @@ import { DivTemp, DivTempCont, DivTempConteiner, TitleTemp } from "../styles";
 
 function Temp(){
 
-    const [TempPomodoro, setTempPomodoro] = useState("00:00");
+    const [tempPomodoro, setTempPomodoro] = useState("00:00");
 
 
     return(
@@ -16,10 +16,10 @@ function Temp(){
                 <Buttons ButName='Pausa Longa' setTemp={setTempPomodoro} Tip='GetTemp'/>
             </DivTemp>
             <DivTempCont>
-               <p>{TempPomodoro}</p>
+               <p>{tempPomodoro}</p>
             </DivTempCont>
             <DivTemp>
-                <Buttons ButName='Iniciar' TempPomodoro={TempPomodoro} Tip='ContTemp'/>
+                <Buttons ButName='Iniciar' tempPomodoro={tempPomodoro} Tip='ContTemp'/>
                 <Buttons ButName='Pausar' Tip='ContTemp'/>
             </DivTemp>
         </DivTempConteiner>    
