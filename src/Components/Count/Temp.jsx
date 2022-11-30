@@ -1,6 +1,7 @@
-import {  useEffect, useState } from "react";
+import { useState } from "react";
 import Buttons from "../Conf/Buttons";
-import { DivTemp, DivTempCont, DivTempConteiner, TitleTemp } from "../styles";
+import { DivButtons, DivCount, DivTemp, Title } from "./stylesCount";
+// import { DivTemp, DivTempCont, DivTempConteiner, TitleTemp } from "../styles";
 
 function Temp(){
 
@@ -8,21 +9,26 @@ function Temp(){
     
 
     return(
-        <DivTempConteiner>
-            <TitleTemp>Studoro</TitleTemp>
-            <DivTemp>
-                <Buttons ButName='Pomodoro' setTemp={setTempPomodoro} Tip='GetTemp'/>
-                <Buttons ButName='Pausa Curta' setTemp={setTempPomodoro} Tip='GetTemp'/>
-                <Buttons ButName='Pausa Longa' setTemp={setTempPomodoro} Tip='GetTemp'/>
-            </DivTemp>
-            <DivTempCont>
-                <p id="temp">{tempPomodoro}</p>
-            </DivTempCont>
-            <DivTemp>
-                <Buttons ButName='Iniciar' setTemp={setTempPomodoro} tempPomodoro={tempPomodoro} Tip='ContTemp'/>
-                <Buttons ButName='Pausar' Tip='ContTemp'/>
-            </DivTemp>
-        </DivTempConteiner>    
+        <DivCount>
+            <div>
+                <Title>Studoro</Title>
+
+                <DivButtons>
+                    <Buttons ButName='Pomodoro' setTemp={setTempPomodoro} Tip='GetTemp'/>
+                    <Buttons ButName='Pausa Curta' setTemp={setTempPomodoro} Tip='GetTemp'/>
+                    <Buttons ButName='Pausa Longa' setTemp={setTempPomodoro} Tip='GetTemp'/>
+                </DivButtons>
+
+                <DivTemp>
+                    <p id="temp">{tempPomodoro}</p>
+                </DivTemp>
+                
+                <DivButtons>
+                    <Buttons ButName='Iniciar' setTemp={setTempPomodoro} tempPomodoro={tempPomodoro} Tip='ContTemp'/>
+                    <Buttons ButName='Pausar' Tip='ContTemp'/>
+                </DivButtons>
+            </div>
+        </DivCount>    
     );
 }
 

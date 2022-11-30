@@ -32,9 +32,11 @@ function ModalTask({isOpen, onClose, setTasks, tasks}){
 
     return(
         <ChakraProvider>
+
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay/>
-                <ModalContent>
+                <ModalContent pos="absolute" top="25%" left="33%" >
+                    
                     <ModalHeader>Adicionar uma nova Tarefa</ModalHeader> <ModalCloseButton/>
                     
                     <ModalBody pb={6}>
@@ -46,8 +48,10 @@ function ModalTask({isOpen, onClose, setTasks, tasks}){
                     <ModalFooter>
                         <Button colorScheme='red' mr={3} onClick={handleAddTask}>Add</Button>
                     </ModalFooter>
+
                 </ModalContent>
             </Modal>  
+
         </ChakraProvider>
     );
 }

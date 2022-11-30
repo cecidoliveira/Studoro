@@ -1,5 +1,5 @@
-import { DivConf } from "../styles";
 import Buttons from "./Buttons";
+import { DivConf } from "./stylesConf";
 
 function Conf(props){
     

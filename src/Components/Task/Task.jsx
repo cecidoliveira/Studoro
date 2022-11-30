@@ -2,7 +2,8 @@ import React,  { useState } from 'react';
 import ModalTask from './ModalTask';
 import { IconButton, Checkbox, ChakraProvider, useToast } from '@chakra-ui/react';
 import { AddIcon, DeleteIcon } from '@chakra-ui/icons';
-import { DivTask, DivTitle, TitleTask, PahTask, DivList } from '../styles';
+import { DivButtons, DivList, DivTask, DivTaskHeader, Title } from './stylesTask';
+
 
 function Task(){
     const [tasks, setTasks] = useState([]);
@@ -44,21 +45,22 @@ function Task(){
         <ChakraProvider>
             <DivTask>
                 <ModalTask isOpen={open} onClose={()=> setOpen(false)} tasks={tasks} setTasks={setTasks}/>
-                <DivTitle>
-                    <TitleTask>Tarefas</TitleTask>
-                        <div>
+                
+                <DivTaskHeader>
+                    <Title>Tarefas</Title>
+                        <DivButtons>
                             <IconButton onClick={()=> setOpen(true)} colorScheme='red' aria-label='Add Task' fontSize='25px' icon={<AddIcon/>} />
                             <IconButton onClick={handleDeleteSelects} colorScheme='red' aria-label='Delete Tasks' fontSize='25px' icon={<DeleteIcon/>} />
-                        </div>
-                </DivTitle>
+                        </DivButtons>
+                </DivTaskHeader>
+                
                 <DivList>
                     {tasks.map(tk => 
                         <Checkbox colorScheme='red' key={tk.id} isChecked={tk.ischecked} onChange={() => handleSelects(tk.id)}>
-                            <PahTask>{tk.content}</PahTask>
+                            {tk.content}
                         </Checkbox>
                     )}
                 </DivList>
-
             </DivTask>
         </ChakraProvider>
     );
