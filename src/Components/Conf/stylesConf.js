@@ -21,13 +21,15 @@ export const Title = styled.h2`
 `;
 
 export const Button = styled.button`
-    color: #ffffff;
+    //${({select_conf})=> select_conf === true ? 'background-color: #B71D1D;' : 'background-color: #691110;'}
+    //${({select_counter})=> select_counter === true ? 'color: #B48887;' : 'color: #ffffff;'}
     font-size: 23px;
     margin: 5px;
     padding: 5px 0;
+    background-color: #691110;
+    color: #ffffff;
     border-radius: 20px;
     width: 10rem;
-    background-color: #691110;
     @media only screen and (min-width: 1900px) {
         font-size: 25px;
         margin: 10px 30px;

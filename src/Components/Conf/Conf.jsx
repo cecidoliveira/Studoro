@@ -8,8 +8,8 @@ function Conf(props){
             <Title>{props.ConfName}</Title>
 
             <div>
-                <Buttons ButName='Curto' Temp={props.TimeCurto} TempName={props.ConfName} Tip='SetTemp' />
-                <Buttons ButName='Longo' Temp={props.TimeLongo} TempName={props.ConfName} Tip='SetTemp'/>
+                <Buttons ButName='Curto' select={true} Temp={props.TimeCurto} TempName={props.ConfName} Tip='SetTemp' />
+                <Buttons ButName='Longo' select={false} Temp={props.TimeLongo} TempName={props.ConfName} Tip='SetTemp'/>
             </div>
             
         </DivConf>
