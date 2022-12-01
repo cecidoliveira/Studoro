@@ -63,7 +63,7 @@ function Buttons(props){
     }
 
     return(
-        <Button onClick={()=>{handleButton}} 
+        <Button onClick={()=>{handleButton()}} 
         select={props.select}  
         id={`${props.Tip}-${props.ButName}`}>{content}</Button>
     );

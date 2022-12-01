@@ -34,4 +34,8 @@ export const Button = styled.button`
         font-size: 25px;
         margin: 10px 30px;
     }
+    @media only screen and (min-width: 1600px) {
+        margin: 5px;
+        width: 6rem;
+    }
 `;

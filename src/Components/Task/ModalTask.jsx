@@ -35,7 +35,7 @@ function ModalTask({isOpen, onClose, setTasks, tasks}){
 
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay/>
-                <ModalContent pos="absolute" top="25%" left="33%" >
+                <ModalContent pos="absolute" top="25%" left="25%" >
                     
                     <ModalHeader>Adicionar uma nova Tarefa</ModalHeader> <ModalCloseButton/>
                     

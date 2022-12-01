@@ -20,6 +20,13 @@ export const DivButtons = styled(DivTaskHeader)`
         font-size: 28px;
         margin: 10px 0;
     }
+    @media only screen and (min-width: 1600px) {
+        button{
+            margin: 5px;
+            font-size: 30px;
+            
+        }
+    }
 `;
 
 export const DivList = styled(DivTaskHeader)`

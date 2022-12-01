@@ -31,8 +31,13 @@ export const DivTemp = styled.div`
         font-size: 10rem;
         color: #ffffff;
     }
+    @media only screen and (min-width: 1600px) {
+        p{font-size: 8rem;}
+    }
 `;
 export const Title = styled.h1`
     color: #ffffff;
     font-size: 80px;
+    
 `;
+
