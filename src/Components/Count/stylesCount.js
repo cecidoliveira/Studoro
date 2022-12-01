@@ -1,24 +1,27 @@
 import styled from "styled-components";
 
-export const DivCount = styled.div`
+export const DivCountConteiner = styled.div`
     background-color: #C42021;
     margin: 20px;
+    padding: 10px 0;
     max-height: 95%;
     border-radius: 20px;
     text-align: center;
 `;
+export const DivCount = styled.div`
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    @media only screen and (min-width: 1900px) {
+        height: 90%;
+    }
+`;
 
 export const DivButtons = styled.div`
     margin: 5px 0;
-    button{
-        color: #ffffff;
-        font-size: 25px;
-        margin: 5px 20px;
-        padding: 10px;
-        border-radius: 20px;
-        width: 24%;
-        background-color: #691110;
-    }
 `;
 export const DivTemp = styled.div`
     background-color: #B71D1D;
@@ -30,7 +33,6 @@ export const DivTemp = styled.div`
     }
 `;
 export const Title = styled.h1`
-    margin-top: 5px;
     color: #ffffff;
     font-size: 80px;
 `;

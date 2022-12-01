@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Buttons from "../Conf/Buttons";
-import { DivButtons, DivCount, DivTemp, Title } from "./stylesCount";
+import { DivButtons, DivCount, DivCountConteiner, DivTemp, Title } from "./stylesCount";
 // import { DivTemp, DivTempCont, DivTempConteiner, TitleTemp } from "../styles";
 
 function Temp(){
@@ -9,8 +9,9 @@ function Temp(){
     
 
     return(
-        <DivCount>
-            <div>
+        <DivCountConteiner>
+
+            <DivCount>
                 <Title>Studoro</Title>
 
                 <DivButtons>
@@ -22,13 +23,14 @@ function Temp(){
                 <DivTemp>
                     <p id="temp">{tempPomodoro}</p>
                 </DivTemp>
-                
+
                 <DivButtons>
                     <Buttons ButName='Iniciar' setTemp={setTempPomodoro} tempPomodoro={tempPomodoro} Tip='ContTemp'/>
                     <Buttons ButName='Pausar' Tip='ContTemp'/>
                 </DivButtons>
-            </div>
-        </DivCount>    
+            </DivCount>
+            
+        </DivCountConteiner>    
     );
 }
 

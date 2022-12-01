@@ -1,5 +1,6 @@
 import { useToast } from '@chakra-ui/react';
 import { contTemp, stopContTemp } from "../Count/Cont";
+import { Button } from './stylesConf';
 
 function Buttons(props){
     let content;
@@ -62,7 +63,7 @@ function Buttons(props){
     }
 
     return(
-        <button onClick={handleButton} id={`${props.Tip}-${props.ButName}`}>{content}</button>
+        <Button onClick={handleButton} id={`${props.Tip}-${props.ButName}`}>{content}</Button>
     );
 }
 

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const DivTask = styled.div`
-    height: 100vh;
     background-color: #691110;
     max-width: 441px;
 `;
@@ -27,7 +26,7 @@ export const DivList = styled(DivTaskHeader)`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    height: 75%;
+    height: 77%;
     margin: 0 20px;
     label{
         width: 90%;
@@ -37,9 +36,10 @@ export const DivList = styled(DivTaskHeader)`
         color: #ffffff;
         font-size: 30px;
     }
+    @media only screen and (min-width: 1900px) {
+        height: 85%;
+    }
 `;
-
-
 
 export const Title = styled.h2`
     color: #ffffff;
