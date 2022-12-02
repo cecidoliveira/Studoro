@@ -31,7 +31,6 @@ function Task(){
     function handleSelects(id) {
         let check = tasks.map((tk)=>{
             if(tk.id == id){
-                console.log('aqui')
                 return {id: tk.id, content: tk.content, ischecked: !tk.ischecked}
             }else{
                 return {id: tk.id, content: tk.content, ischecked: tk.ischecked}

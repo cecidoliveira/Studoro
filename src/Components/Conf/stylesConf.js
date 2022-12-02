@@ -15,7 +15,7 @@ export const Title = styled.h2`
     font-size: 40px;
     font-weight: 600;
     text-align: center;
-    @media only screen and (min-width: 1900px) {
+    @media only screen and (min-width: 1600px) {
         font-size: 50px;
     }
 `;
@@ -28,12 +28,10 @@ export const Button = styled.button`
     color: ${(props)=> props.select_cont === true ? '#B48887': '#ffffff'};
     border-radius: 20px;
     width: 10rem;
-    @media only screen and (min-width: 1900px) {
-        font-size: 25px;
-        margin: 10px 30px;
-    }
+    
     @media only screen and (min-width: 1600px) {
+        font-size: 25px;
         margin: 5px;
-        width: 6rem;
+        width: 13rem;
     }
 `;

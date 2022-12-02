@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Buttons from "../Conf/Buttons";
 import { DivButtons, DivCount, DivCountConteiner, DivTemp, Title } from "./stylesCount";
-// import { DivTemp, DivTempCont, DivTempConteiner, TitleTemp } from "../styles";
 
 function Temp(){
 

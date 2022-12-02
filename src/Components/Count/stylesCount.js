@@ -7,7 +7,9 @@ export const DivCountConteiner = styled.div`
     max-height: 95%;
     border-radius: 20px;
     text-align: center;
+    height: 100%;
 `;
+
 export const DivCount = styled.div`
     display: flex;
     height: 100%;
@@ -28,11 +30,13 @@ export const DivTemp = styled.div`
     margin: 30px 5%;
     border-radius: 30px;
     p{
-        font-size: 10rem;
+        font-size: 5rem;
         color: #ffffff;
     }
     @media only screen and (min-width: 1600px) {
-        p{font-size: 8rem;}
+        p{
+            font-size: 7rem;
+        }
     }
 `;
 export const Title = styled.h1`

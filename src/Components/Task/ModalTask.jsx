@@ -33,20 +33,20 @@ function ModalTask({isOpen, onClose, setTasks, tasks}){
     return(
         <ChakraProvider>
 
-            <Modal isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay/>
-                <ModalContent pos="absolute" top="25%" left="25%" >
+            <Modal isOpen={isOpen} onClose={onClose} >
+                <ModalOverlay h='100%' w='100%'/>
+                <ModalContent>
                     
                     <ModalHeader>Adicionar uma nova Tarefa</ModalHeader> <ModalCloseButton/>
                     
                     <ModalBody pb={6}>
                         <FormControl>
-                            <Input value={value} focusBorderColor='gray' onChange={(event) => setValue(event.target.value)} placeholder='tarefa' />
+                            <Input value={value} focusBorderColor='gray' size='lg' onChange={(event) => setValue(event.target.value)} placeholder='tarefa' />
                             </FormControl>
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button colorScheme='red' mr={3} onClick={handleAddTask}>Add</Button>
+                        <Button colorScheme='red' w='35%' fontSize='22px' onClick={handleAddTask}>Adicionar</Button>
                     </ModalFooter>
 
                 </ModalContent>

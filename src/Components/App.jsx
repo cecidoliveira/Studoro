@@ -1,16 +1,17 @@
 import Conf from "./Conf/Conf";
 import Temp from "./Count/Temp";
 import Task from "./Task/Task";
-import { DivConfConteiner, SectionApp } from "./styles"
+import { DivConfConteiner, DivConteiner, SectionApp } from "./styles"
 
 function App() {
 
   return (
     <SectionApp>
       <Task/>
-
-      <Temp/>
-      
+      <DivConteiner>
+        <Temp/>
+      </DivConteiner>
+    
       <DivConfConteiner>
         <Conf ConfName='Pomodoro' TimeCurto='25' TimeLongo='30' />
         <Conf ConfName='Pausa Curta' TimeCurto='5' TimeLongo='10' />
