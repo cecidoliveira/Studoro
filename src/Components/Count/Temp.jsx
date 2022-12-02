@@ -25,8 +25,8 @@ function Temp(){
                 </DivTemp>
 
                 <DivButtons>
-                    <Buttons ButName='Iniciar' select={false} setTemp={setTempPomodoro} tempPomodoro={tempPomodoro} Tip='ContTemp'/>
-                    <Buttons ButName='Pausar' select={true} Tip='ContTemp'/>
+                    <Buttons ButName='Iniciar' select_cont={false} setTemp={setTempPomodoro} tempPomodoro={tempPomodoro} Tip='ContTemp'/>
+                    <Buttons ButName='Pausar' select_cont={true} Tip='ContTemp'/>
                 </DivButtons>
             </DivCount>
             

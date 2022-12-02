@@ -1,9 +1,11 @@
 import { useToast } from '@chakra-ui/react';
+import { useState } from 'react';
 import { contTemp, stopContTemp } from "../Count/Cont";
 import { Button } from './stylesConf';
 
 function Buttons(props){
     let content;
+    const [isDisable, setIsDisabled] = useState([props.select_conf,props.select_cont]);
 
     const toast = useToast();
 
@@ -55,6 +57,7 @@ function Buttons(props){
                 break;
         }
     }
+    
 
     if(props.Temp != undefined){
         content = `${props.ButName} (${props.Temp} min)`;
@@ -64,7 +67,9 @@ function Buttons(props){
 
     return(
         <Button onClick={()=>{handleButton()}} 
-        select={props.select}  
+        select_conf={props.select_conf} 
+        select_cont={props.select_cont}  
+        disabled={isDisable[0] || isDisable[1]}
         id={`${props.Tip}-${props.ButName}`}>{content}</Button>
     );
 }

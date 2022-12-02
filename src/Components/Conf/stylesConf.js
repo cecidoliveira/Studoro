@@ -21,13 +21,11 @@ export const Title = styled.h2`
 `;
 
 export const Button = styled.button`
-    //${({select_conf})=> select_conf === true ? 'background-color: #B71D1D;' : 'background-color: #691110;'}
-    //${({select_counter})=> select_counter === true ? 'color: #B48887;' : 'color: #ffffff;'}
     font-size: 23px;
     margin: 5px;
     padding: 5px 0;
-    background-color: #691110;
-    color: #ffffff;
+    background-color:${(props)=> props.select_conf === true ? '#B71D1D': '#691110'};
+    color: ${(props)=> props.select_cont === true ? '#B48887': '#ffffff'};
     border-radius: 20px;
     width: 10rem;
     @media only screen and (min-width: 1900px) {
