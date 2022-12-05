@@ -1,13 +1,15 @@
 import { useToast } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { contTemp, stopContTemp } from "../Count/Cont";
 import { Button } from './stylesConf';
 
 function Buttons(props){
-    let content;
-    const [isDisable, setIsDisabled] = useState([props.select_conf,props.select_cont]);
-
-    const toast = useToast();
+    let content,active;
+    const toast = useToast();   
+    
+    useEffect(()=>{
+        localStorage.clear();
+    },[]);
 
     function handleButton(){
         switch (props.Tip) {
@@ -27,9 +29,9 @@ function Buttons(props){
                 break;
 
             case 'SetTemp':
-                    stopContTemp();
                     let tempo = props.Temp <10 ? '0'+props.Temp+':00' : props.Temp+':00';
-                    localStorage.setItem(`${props.TempName}`,`${tempo}`)    
+                    localStorage.setItem(`${props.TempName}`,`${tempo}`);
+                    handleButDisabled()  
                 break;
 
             case 'ContTemp':
@@ -57,20 +59,35 @@ function Buttons(props){
                 break;
         }
     }
-    
+
+    function handleButDisabled() {
+        let val;
+        switch (props.ButName) {
+            case 'Curto':
+                val = props.isDisabled.filter(dsbl => dsbl != `${props.TempName}-Longo`);
+                val = [...val, `${props.TempName}-Curto`];
+                props.setIsDisabled(val);
+                break;
+
+            case 'Longo':
+                val = props.isDisabled.filter(dsbl => dsbl != `${props.TempName}-Curto`);
+                val = [...val, `${props.TempName}-Longo`];
+                props.setIsDisabled(val);
+                break;
+
+        }
+        
+    }
 
     if(props.Temp != undefined){
         content = `${props.ButName} (${props.Temp} min)`;
+        active = props.isDisabled.some(dsbl => dsbl == `${props.TempName}-${props.ButName}`)
     }else{
         content = `${props.ButName}`;
-    }
+    } 
 
     return(
-        <Button onClick={()=>{handleButton()}} 
-        select_conf={props.select_conf} 
-        select_cont={props.select_cont}  
-        disabled={isDisable[0] || isDisable[1]}
-        id={`${props.Tip}-${props.ButName}`}>{content}</Button>
+        <Button onClick={handleButton} select={active || false} disabled={active || false}>{content}</Button>
     );
 }
 

@@ -11,7 +11,6 @@ function Task(){
     const toast = useToast();
 
     function handleDeleteSelects(){
-        console.log(tasks);
         let select = tasks.some(tk => tk.ischecked == true);
 
         if(select){

@@ -24,8 +24,8 @@ export const Button = styled.button`
     font-size: 23px;
     margin: 5px;
     padding: 5px 0;
-    background-color:${(props)=> props.select_conf === true ? '#B71D1D': '#691110'};
-    color: ${(props)=> props.select_cont === true ? '#B48887': '#ffffff'};
+    color: #ffffff;
+    background-color:${(props)=> props.select === true ? '#B71D1D': '#691110'};
     border-radius: 20px;
     width: 10rem;
     
