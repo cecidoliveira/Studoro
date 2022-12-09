@@ -14,7 +14,6 @@ export const DivConteiner = styled.div`
 export const DivConfConteiner = styled(DivConteiner)`
     display: grid;
     align-items: center;
-    background-color:  #FF8081;
     margin-right: 10px;
     grid-template-rows: 1fr 1fr 1fr;
 `;

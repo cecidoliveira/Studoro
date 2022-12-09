@@ -9,14 +9,15 @@ function App() {
   return (
     <SectionApp>
       <Task/>
+      
       <DivConteiner>
         <Temp/>
       </DivConteiner>
     
       <DivConfConteiner>
         <Conf ConfName='Pomodoro'  TimeCurto='25' TimeLongo='30' isDisabled={isDisabled} setIsDisabled={setIsDisabled} />
-        <Conf ConfName='Pausa Curta' TimeCurto='5' TimeLongo='10' isDisabled={isDisabled} setIsDisabled={setIsDisabled}/>
-        <Conf ConfName='Pausa Longa' TimeCurto='15' TimeLongo='30' isDisabled={isDisabled} setIsDisabled={setIsDisabled}/>
+        <Conf ConfName='Pausa Curta' TimeCurto='5' TimeLongo='10' isDisabled={isDisabled} setIsDisabled={setIsDisabled} />
+        <Conf ConfName='Pausa Longa' TimeCurto='15' TimeLongo='30' isDisabled={isDisabled} setIsDisabled={setIsDisabled} />
       </DivConfConteiner>
            
     </SectionApp>

@@ -1,10 +1,10 @@
 let timer;
 
-export function contTemp({setTemp, tempPom}){
+export function contTemp({setTemp, tempPomodoro}){
     
     clearInterval(timer);
     
-    let counter = tempPom.split(':');
+    let counter = tempPomodoro.split(':');
     let min = parseInt(counter[0]);
     let seg = parseInt(counter[1]);
     

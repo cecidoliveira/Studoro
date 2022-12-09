@@ -1,4 +1,4 @@
-import React,  { useState } from 'react';
+import { useState } from 'react';
 import ModalTask from './ModalTask';
 import { IconButton, Checkbox, ChakraProvider, useToast } from '@chakra-ui/react';
 import { AddIcon, DeleteIcon } from '@chakra-ui/icons';

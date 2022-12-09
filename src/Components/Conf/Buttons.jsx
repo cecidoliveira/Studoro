@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { contTemp, stopContTemp } from "../Count/Cont";
 import { Button } from './stylesConf';
 
-function Buttons(props){
+function Buttons({ButName, setTemp, Tip, tempPomodoro, isDisabled, setIsDisabled, Temp, TempName}){
     let content,active;
     const toast = useToast();   
     
@@ -12,32 +12,32 @@ function Buttons(props){
     },[]);
 
     function handleButton(){
-        switch (props.Tip) {
+        switch (Tip) {
             case 'GetTemp':
                     stopContTemp();
-                    switch (props.ButName) {
+                    switch (ButName) {
                         case 'Pomodoro':
-                            props.setTemp(localStorage.getItem(`${props.ButName}`)||'25:00')
+                            setTemp(localStorage.getItem(`${ButName}`)||'25:00')
                             break;
                         case 'Pausa Curta':
-                            props.setTemp(localStorage.getItem(`${props.ButName}`)||'05:00')
+                            setTemp(localStorage.getItem(`${ButName}`)||'05:00')
                             break;
                         case 'Pausa Longa':
-                            props.setTemp(localStorage.getItem(`${props.ButName}`)||'15:00')
+                            setTemp(localStorage.getItem(`${ButName}`)||'15:00')
                             break;
                     }
                 break;
 
             case 'SetTemp':
-                    let tempo = props.Temp <10 ? '0'+props.Temp+':00' : props.Temp+':00';
-                    localStorage.setItem(`${props.TempName}`,`${tempo}`);
+                    let tempo = Temp < 10 ? '0'+ Temp + ':00' : Temp + ':00';
+                    localStorage.setItem(`${TempName}`,`${tempo}`);
                     handleButDisabled()  
                 break;
 
             case 'ContTemp':
-                    switch (props.ButName) {
+                    switch (ButName) {
                         case 'Iniciar':
-                            if(props.tempPomodoro == "00:00"){
+                            if(tempPomodoro == "00:00"){
                                 toast({
                                     description: "Defina tipo de tempo para iniciar a contagem",
                                     variant: 'left-accent',
@@ -47,7 +47,7 @@ function Buttons(props){
                                 });
                             }
                             else{
-                                contTemp({setTemp: props.setTemp, tempPom: props.tempPomodoro});
+                                contTemp({setTemp, tempPomodoro});
                             }
                             break;
 
@@ -62,28 +62,28 @@ function Buttons(props){
 
     function handleButDisabled() {
         let val;
-        switch (props.ButName) {
+        switch (ButName) {
             case 'Curto':
-                val = props.isDisabled.filter(dsbl => dsbl != `${props.TempName}-Longo`);
-                val = [...val, `${props.TempName}-Curto`];
-                props.setIsDisabled(val);
+                val = isDisabled.filter(dsbl => dsbl != `${TempName}-Longo`);
+                val = [...val, `${TempName}-Curto`];
+                setIsDisabled(val);
                 break;
 
             case 'Longo':
-                val = props.isDisabled.filter(dsbl => dsbl != `${props.TempName}-Curto`);
-                val = [...val, `${props.TempName}-Longo`];
-                props.setIsDisabled(val);
+                val = isDisabled.filter(dsbl => dsbl != `${TempName}-Curto`);
+                val = [...val, `${TempName}-Longo`];
+                setIsDisabled(val);
                 break;
 
         }
         
     }
 
-    if(props.Temp != undefined){
-        content = `${props.ButName} (${props.Temp} min)`;
-        active = props.isDisabled.some(dsbl => dsbl == `${props.TempName}-${props.ButName}`)
+    if(Temp != undefined){
+        content = `${ButName} (${Temp} min)`;
+        active = isDisabled.some(dsbl => dsbl == `${TempName}-${ButName}`)
     }else{
-        content = `${props.ButName}`;
+        content = `${ButName}`;
     } 
 
     return(
