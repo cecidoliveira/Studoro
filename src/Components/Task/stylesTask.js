@@ -33,7 +33,8 @@ export const DivList = styled(DivTaskHeader)`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    height: 77%;
+    height: 75vh;
+    overflow-y: auto;
     margin: 0 20px;
     label{
         width: 90%;
@@ -44,7 +45,7 @@ export const DivList = styled(DivTaskHeader)`
         font-size: 30px;
     }
     @media only screen and (min-width: 1900px) {
-        height: 85%;
+        height: 85vh;
     }
 `;
 
