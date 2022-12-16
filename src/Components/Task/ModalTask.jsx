@@ -18,15 +18,26 @@ function ModalTask({isOpen, onClose, setTasks, tasks}){
     const toast = useToast();
 
     function handleAddTask(){
-        toast({
-            description: "Tarefa criada",
-            variant: 'left-accent',
-            status: 'success',
-            duration: 2000,
-            isClosable: true
-        });
-        setTasks([...tasks, {id: counter, content: value, ischecked: false}]);
-        setCounter(counter + 1);
+        if(value == ' '||value == ''){
+            toast({
+                description: "Tarefa vazia",
+                variant: 'left-accent',
+                status: 'error',
+                duration: 2000,
+                isClosable: true
+            });
+        }
+        else{   
+            toast({
+                description: "Tarefa criada",
+                variant: 'left-accent',
+                status: 'success',
+                duration: 2000,
+                isClosable: true
+            });
+            setTasks([...tasks, {id: counter, content: value, ischecked: false}]);
+            setCounter(counter + 1);
+        }
         onClose();
     }
 
@@ -41,7 +52,7 @@ function ModalTask({isOpen, onClose, setTasks, tasks}){
                     
                     <ModalBody pb={6}>
                         <FormControl>
-                            <Input value={value} focusBorderColor='gray' size='lg' onChange={(event) => setValue(event.target.value)} placeholder='tarefa' />
+                            <Input value={value} focusBorderColor='gray' size='lg' onChange={(event) => setValue(event.target.value)} placeholder='escreva sua tarefa' />
                             </FormControl>
                     </ModalBody>
 

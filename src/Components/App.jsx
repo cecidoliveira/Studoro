@@ -7,7 +7,7 @@ import { DivConfConteiner, DivConteiner, SectionApp } from "./styles"
 function App() {
   const [isDisabled, setIsDisabled] = useState(['Pomodoro-Curto','Pausa Curta-Curto','Pausa Longa-Curto']);
   return (
-    <SectionApp>
+    <SectionApp>   
       <Task/>
       
       <DivConteiner>

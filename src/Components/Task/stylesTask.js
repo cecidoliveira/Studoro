@@ -72,3 +72,32 @@ export const DivList = styled(DivTaskHeader)`
         border-radius: 20px;     
     }
 `;
+/* div SelectTdTasks */
+export const DivSelectTasks = styled.div`
+    position: absolute;
+    top: 90vh;
+    left: 20px;
+    display: flex;
+    z-index: 1;
+    background-color: #ffffff;
+    height: 50px;
+    width: 520px;
+    border-radius: 15px;
+    justify-content: space-around;
+    align-items: center;
+
+    p{  
+        padding-left: 10px;
+        color: #C42021;
+        font-size: 30px;
+    }
+    button{
+        background-color: #C42021;
+        width: 15%;
+        font-size: 25px;
+        border-radius: 20px;
+        color: #ffffff;
+        height: 35px;
+        margin-right: 5px;
+    }
+`;

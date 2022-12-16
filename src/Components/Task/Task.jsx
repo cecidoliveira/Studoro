@@ -3,12 +3,16 @@ import ModalTask from './ModalTask';
 import { IconButton, Checkbox, ChakraProvider, useToast } from '@chakra-ui/react';
 import { AddIcon, DeleteIcon } from '@chakra-ui/icons';
 import { DivButtons, DivList, DivTask, DivTaskHeader, Title } from './stylesTask';
+import SelectTdTasks from './SelectTdTasks';
 
 
 function Task(){
     const [tasks, setTasks] = useState([]);
     const [open, setOpen] = useState(false);
+    const [selectTdsTasks,setSelectTdsTasks] = useState([false,false])
     const toast = useToast();
+
+    
 
     function handleDeleteSelects(){
         let select = tasks.some(tk => tk.ischecked == true);
@@ -28,19 +32,17 @@ function Task(){
     }
     
     function handleSelects(id) {
-        let check = tasks.map((tk)=>{
-            if(tk.id == id){
-                return {id: tk.id, content: tk.content, ischecked: !tk.ischecked}
-            }else{
-                return {id: tk.id, content: tk.content, ischecked: tk.ischecked}
-            }
-        });
+        let check = tasks.map((tk) => tk.id == id ? {id: tk.id, content: tk.content, ischecked: !tk.ischecked} : {id: tk.id, content: tk.content, ischecked: tk.ischecked});
         setTasks(check);
+
+        const checked = tasks.filter((tk)=> tk.ischecked == true)
+        checked.length > 1 ? setSelectTdsTasks([true, selectTdsTasks[1]]) : setSelectTdsTasks([false, selectTdsTasks[1]])
     }
     
 
     return(
         <ChakraProvider>
+            {selectTdsTasks[0] == true && selectTdsTasks[1] == false ? <SelectTdTasks setSelectTdsTasks={setSelectTdsTasks}/> : <></>}
             <DivTask>
                 <ModalTask isOpen={open} onClose={()=> setOpen(false)} tasks={tasks} setTasks={setTasks}/>
                 
