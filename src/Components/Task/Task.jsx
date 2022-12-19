@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ModalTask from './ModalTask';
 import { IconButton, Checkbox, ChakraProvider, useToast } from '@chakra-ui/react';
 import { AddIcon, DeleteIcon } from '@chakra-ui/icons';
@@ -11,8 +11,8 @@ function Task(){
     const [open, setOpen] = useState(false);
     const [selectTdsTasks,setSelectTdsTasks] = useState([false,false])
     const toast = useToast();
-
     
+    useEffect(()=> console.log(tasks),[tasks])
 
     function handleDeleteSelects(){
         let select = tasks.some(tk => tk.ischecked == true);
@@ -42,7 +42,7 @@ function Task(){
 
     return(
         <ChakraProvider>
-            {selectTdsTasks[0] == true && selectTdsTasks[1] == false ? <SelectTdTasks setSelectTdsTasks={setSelectTdsTasks}/> : <></>}
+            {selectTdsTasks[0] == true && selectTdsTasks[1] == false ? <SelectTdTasks setSelectTdsTasks={setSelectTdsTasks} tasks={tasks} setTasks={setTasks}/> : <></>}
             <DivTask>
                 <ModalTask isOpen={open} onClose={()=> setOpen(false)} tasks={tasks} setTasks={setTasks}/>
                 

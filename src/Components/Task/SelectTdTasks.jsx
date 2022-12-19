@@ -1,13 +1,11 @@
-import { useEffect } from "react";
 import { DivSelectTasks } from "./stylesTask";
 
-function SelectTdTasks({setSelectTdsTasks}){
-    useEffect(()=>{
-        setTimeout(()=> setSelectTdsTasks([false,false]), 10000)
-    },[]);
+function SelectTdTasks({tasks, setTasks, setSelectTdsTasks}){
+    
     
     function handleTdTask(){
-
+        let check = tasks.map((tk)=> tk.ischecked === true ? {id: tk.id, content: tk.content, ischeked: tk.ischecked} : {id: tk.id, content: tk.content, ischeked: !tk.ischecked});
+        setTasks(check);
     }
 
     return(
