@@ -42,6 +42,7 @@ export const DivList = styled(DivTaskHeader)`
     justify-content: flex-start;
     height: 75vh;
     overflow-y: auto;
+    overflow-x: hidden;
     margin: 0 20px;
 
     /* contents */

@@ -1,18 +1,21 @@
+import { useEffect } from 'react';
+
+import { useTaskStore } from '../../Store/Task';
 import { DivSelectTasks } from "./stylesTask";
 
-function SelectTdTasks({tasks, setTasks, setSelectTdsTasks}){
+
+function SelectTdTasks(){
+    const {toggleSelect, tdsTask, activeTdsTasks} = useTaskStore(state => state)
     
-    
-    function handleTdTask(){
-        let check = tasks.map((tk)=> tk.ischecked === true ? {id: tk.id, content: tk.content, ischeked: tk.ischecked} : {id: tk.id, content: tk.content, ischeked: !tk.ischecked});
-        setTasks(check);
-    }
+    useEffect(()=>{
+        activeTdsTasks()
+    },[])
 
     return(
         <DivSelectTasks>
             <p>Selecionar Todas as Tasks ?</p>
-            <button onClick={handleTdTask}>Sim</button>
-            <button onClick={()=> setSelectTdsTasks([false,true])}>Não</button>
+            <button onClick={tdsTask}> Sim </button>
+            <button onClick={toggleSelect}> Não </button>
         </DivSelectTasks>
     )
 }

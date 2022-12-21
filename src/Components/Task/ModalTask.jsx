@@ -1,22 +1,19 @@
-import { Modal, 
-    ModalOverlay, 
-    ModalContent, 
-    ModalHeader, 
-    ModalFooter, 
-    ModalBody, 
-    ModalCloseButton, 
-    ChakraProvider, 
-    FormControl, 
-    Input, 
-    Button,
-    useToast } from '@chakra-ui/react';
-import React,  { useState } from 'react';
+import { Modal, ModalOverlay, ModalContent, ModalHeader, 
+ ModalFooter, ModalBody, ModalCloseButton, FormControl, 
+ Input, Button, useToast } from '@chakra-ui/react';
+ import React,  { useState } from 'react';
 
-function ModalTask({isOpen, onClose, setTasks, tasks}){
+ import { useTaskStore } from '../../Store/Task';
+
+
+function ModalTask({isOpen, onClose}){
+    const { addTask } = useTaskStore(state => state)
+
     const [value, setValue] = React.useState('')
     const [counter, setCounter] = useState(0);
     const toast = useToast();
 
+    
     function handleAddTask(){
         if(value == ' '||value == ''){
             toast({
@@ -35,16 +32,15 @@ function ModalTask({isOpen, onClose, setTasks, tasks}){
                 duration: 2000,
                 isClosable: true
             });
-            setTasks([...tasks, {id: counter, content: value, ischecked: false}]);
+            addTask({id: counter, content: value, ischecked: false});
             setCounter(counter + 1);
         }
         onClose();
     }
 
+    
     return(
-        <ChakraProvider>
-
-            <Modal isOpen={isOpen} onClose={onClose} >
+        <Modal isOpen={isOpen} onClose={onClose} >
                 <ModalOverlay h='100%' w='100%'/>
                 <ModalContent>
                     
@@ -61,9 +57,7 @@ function ModalTask({isOpen, onClose, setTasks, tasks}){
                     </ModalFooter>
 
                 </ModalContent>
-            </Modal>  
-
-        </ChakraProvider>
+        </Modal>  
     );
 }
 
