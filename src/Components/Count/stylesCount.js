@@ -39,7 +39,7 @@ export const DivTemp = styled.div`
         }
     }
     @media only screen and (max-width: 400px) {
-        margin: 20px 5%;
+        margin: 10px 5%;
     }
 `;
 export const Title = styled.h1`

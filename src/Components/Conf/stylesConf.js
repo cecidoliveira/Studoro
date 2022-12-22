@@ -22,7 +22,7 @@ export const Title = styled.h2`
         font-size: 50px;
     }
     @media only screen and (max-width: 400px) {
-        font-size: 30px;
+        font-size: 25px;
     }
 `;
 

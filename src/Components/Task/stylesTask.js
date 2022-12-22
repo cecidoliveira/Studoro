@@ -5,7 +5,6 @@ export const DivTask = styled.div`
     max-width: 441px;
     @media only screen and (max-width: 400px) {
         max-width: 310px;
-        height: 538px;
     }
 `;
 
