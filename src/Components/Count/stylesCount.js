@@ -38,10 +38,15 @@ export const DivTemp = styled.div`
             font-size: 7rem;
         }
     }
+    @media only screen and (max-width: 400px) {
+        margin: 20px 5%;
+    }
 `;
 export const Title = styled.h1`
     color: #ffffff;
     font-size: 80px;
-    
+    @media only screen and (max-width: 400px) {
+        font-size: 50px;
+    }
 `;
 

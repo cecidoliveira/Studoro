@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const DivTask = styled.div`
     background-color: #691110;
     max-width: 441px;
+    @media only screen and (max-width: 400px) {
+        max-width: 310px;
+        height: 538px;
+    }
 `;
 
 export const DivTaskHeader = styled.div`
@@ -57,6 +61,10 @@ export const DivList = styled(DivTaskHeader)`
 
     @media only screen and (min-width: 1900px) {
         height: 85vh;
+    }
+    
+    @media only screen and (max-width: 400px) {
+        height: 65vh;
     }
 
     /* scroll */

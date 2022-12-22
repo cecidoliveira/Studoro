@@ -8,6 +8,9 @@ export const DivConf = styled.div`
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
+    @media only screen and (max-width: 400px) {
+        height: 90%;
+    }
 `;
 
 export const Title = styled.h2`
@@ -17,6 +20,9 @@ export const Title = styled.h2`
     text-align: center;
     @media only screen and (min-width: 1600px) {
         font-size: 50px;
+    }
+    @media only screen and (max-width: 400px) {
+        font-size: 30px;
     }
 `;
 

@@ -7,13 +7,23 @@ export const SectionApp = styled.section`
     grid-template-columns: 400px 45%;
     background-color: #FF8081;
     height: 100vh;
+    @media only screen and (max-width: 400px) {
+        grid-template-columns: 310px 350px;
+    }
 `;
 export const DivConteiner = styled.div`
     background-color: #FF8081;
+    @media only screen and (max-width: 400px) {
+        height: 100vh;
+    }
+    
 `;
 export const DivConfConteiner = styled(DivConteiner)`
     display: grid;
     align-items: center;
     margin-right: 10px;
     grid-template-rows: 1fr 1fr 1fr;
+    @media only screen and (max-width: 400px) {
+       height: 100vh;
+    }
 `;
