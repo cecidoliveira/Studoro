@@ -1,15 +1,15 @@
 import Buttons from "./Buttons";
 import { DivConf, Title } from "./stylesConf";
 
-function Conf({ConfName, TimeCurto, TimeLongo, isDisabled, setIsDisabled}){
+function Conf({ConfName, TimeCurto, TimeLongo}){
     
     return(
         <DivConf>
             <Title>{ConfName}</Title>
 
             <div>
-                <Buttons ButName='Curto' isDisabled={isDisabled} setIsDisabled={setIsDisabled} Temp={TimeCurto} TempName={ConfName} Tip='SetTemp' />
-                <Buttons ButName='Longo' isDisabled={isDisabled} setIsDisabled={setIsDisabled} Temp={TimeLongo} TempName={ConfName} Tip='SetTemp'/>
+                <Buttons ButName='Curto' Temp={TimeCurto} TempName={ConfName} Tip='SetTemp' />
+                <Buttons ButName='Longo' Temp={TimeLongo} TempName={ConfName} Tip='SetTemp'/>
             </div>
             
         </DivConf>

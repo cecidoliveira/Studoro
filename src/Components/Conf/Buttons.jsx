@@ -1,15 +1,13 @@
 import { useToast } from '@chakra-ui/react';
-import { useEffect } from 'react';
+
 import { contTemp, stopContTemp } from "../Count/Cont";
 import { Button } from './stylesConf';
+import { useTempStore } from '../../Store/Temp';
 
-function Buttons({ButName, setTemp, Tip, tempPomodoro, isDisabled, setIsDisabled, Temp, TempName}){
+function Buttons({ButName, Tip, Temp, TempName}){
     let content,active;
     const toast = useToast();   
-    
-    useEffect(()=>{
-        localStorage.clear();
-    },[]);
+    const {setTempPomodoro, pom, pLonga, pCurta, tempPomodoro, defpLonga, defPom, defpCurta, isDisabled, setIsDisabled} = useTempStore(state => state)
 
     function handleButton(){
         switch (Tip) {
@@ -17,20 +15,30 @@ function Buttons({ButName, setTemp, Tip, tempPomodoro, isDisabled, setIsDisabled
                     stopContTemp();
                     switch (ButName) {
                         case 'Pomodoro':
-                            setTemp(localStorage.getItem(`${ButName}`)||'25:00')
-                            break;
+                            setTempPomodoro(pom)
+                        break;
                         case 'Pausa Curta':
-                            setTemp(localStorage.getItem(`${ButName}`)||'05:00')
+                            setTempPomodoro(pCurta)
                             break;
                         case 'Pausa Longa':
-                            setTemp(localStorage.getItem(`${ButName}`)||'15:00')
+                            setTempPomodoro(pLonga)
                             break;
                     }
                 break;
 
             case 'SetTemp':
                     let tempo = Temp < 10 ? '0'+ Temp + ':00' : Temp + ':00';
-                    localStorage.setItem(`${TempName}`,`${tempo}`);
+                    switch (TempName) {
+                        case 'Pomodoro':
+                            defPom(tempo);
+                        break;
+                        case 'Pausa Curta':
+                            defpCurta(tempo);
+                            break;
+                        case 'Pausa Longa':
+                            defpLonga(tempo);
+                            break;
+                    }
                     handleButDisabled()  
                 break;
 
@@ -47,7 +55,7 @@ function Buttons({ButName, setTemp, Tip, tempPomodoro, isDisabled, setIsDisabled
                                 });
                             }
                             else{
-                                contTemp({setTemp, tempPomodoro});
+                                contTemp({tempPomodoro, setTempPomodoro});
                             }
                             break;
 

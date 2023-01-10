@@ -1,9 +1,9 @@
 let timer;
 
-export function contTemp({setTemp, tempPomodoro}){
-    
+
+export function contTemp({tempPomodoro, setTempPomodoro}){
     clearInterval(timer);
-    
+
     let counter = tempPomodoro.split(':');
     let min = parseInt(counter[0]);
     let seg = parseInt(counter[1]);
@@ -21,7 +21,7 @@ export function contTemp({setTemp, tempPomodoro}){
         }
         seg --;
 
-        setTemp(`${min < 10 ? "0" + min : min}:${seg < 10 ? "0" + seg : seg}`)
+        setTempPomodoro(`${min < 10 ? "0" + min : min}:${seg < 10 ? "0" + seg : seg}`)
 
     }, 1000);
 }

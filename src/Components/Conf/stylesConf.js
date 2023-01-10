@@ -9,7 +9,7 @@ export const DivConf = styled.div`
     justify-content: space-around;
     text-align: center;
     @media only screen and (max-width: 400px) {
-        height: 90%;
+        height: 70%;
     }
 `;
 
@@ -22,7 +22,7 @@ export const Title = styled.h2`
         font-size: 50px;
     }
     @media only screen and (max-width: 400px) {
-        font-size: 25px;
+        font-size: 55px;
     }
 `;
 

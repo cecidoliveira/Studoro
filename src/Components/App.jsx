@@ -1,5 +1,4 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import { useState } from "react";
 
 import Conf from "./Conf/Conf";
 import Temp from "./Count/Temp";
@@ -8,7 +7,6 @@ import { DivConfConteiner, DivConteiner, SectionApp } from "./styles"
 
 
 function App() {
-  const [isDisabled, setIsDisabled] = useState(['Pomodoro-Curto','Pausa Curta-Curto','Pausa Longa-Curto']);
   return (
     <ChakraProvider>
       <SectionApp>   
@@ -19,9 +17,9 @@ function App() {
         </DivConteiner>
       
         <DivConfConteiner>
-          <Conf ConfName='Pomodoro'  TimeCurto='25' TimeLongo='30' isDisabled={isDisabled} setIsDisabled={setIsDisabled} />
-          <Conf ConfName='Pausa Curta' TimeCurto='5' TimeLongo='10' isDisabled={isDisabled} setIsDisabled={setIsDisabled} />
-          <Conf ConfName='Pausa Longa' TimeCurto='15' TimeLongo='30' isDisabled={isDisabled} setIsDisabled={setIsDisabled} />
+          <Conf ConfName='Pomodoro'  TimeCurto='25' TimeLongo='30' />
+          <Conf ConfName='Pausa Curta' TimeCurto='5' TimeLongo='10' />
+          <Conf ConfName='Pausa Longa' TimeCurto='15' TimeLongo='30' />
         </DivConfConteiner>
             
       </SectionApp>

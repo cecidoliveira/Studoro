@@ -1,10 +1,9 @@
-import { useState } from "react";
 import Buttons from "../Conf/Buttons";
 import { DivButtons, DivCount, DivCountConteiner, DivTemp, Title } from "./stylesCount";
-
+import { useTempStore } from '../../Store/Temp';
 function Temp(){
 
-    const [tempPomodoro, setTempPomodoro] = useState("00:00");
+    const {tempPomodoro} = useTempStore(state => state)
     
 
     return(
@@ -14,9 +13,9 @@ function Temp(){
                 <Title>Studoro</Title>
 
                 <DivButtons>
-                    <Buttons ButName='Pomodoro' setTemp={setTempPomodoro} Tip='GetTemp'/>
-                    <Buttons ButName='Pausa Curta' setTemp={setTempPomodoro} Tip='GetTemp'/>
-                    <Buttons ButName='Pausa Longa' setTemp={setTempPomodoro} Tip='GetTemp'/>
+                    <Buttons ButName='Pomodoro'  Tip='GetTemp'/>
+                    <Buttons ButName='Pausa Curta' Tip='GetTemp'/>
+                    <Buttons ButName='Pausa Longa' Tip='GetTemp'/>
                 </DivButtons>
 
                 <DivTemp>
@@ -24,7 +23,7 @@ function Temp(){
                 </DivTemp>
 
                 <DivButtons>
-                    <Buttons ButName='Iniciar' setTemp={setTempPomodoro} tempPomodoro={tempPomodoro} Tip='ContTemp'/>
+                    <Buttons ButName='Iniciar' Tip='ContTemp'/>
                     <Buttons ButName='Pausar' Tip='ContTemp'/>
                 </DivButtons>
             </DivCount>
