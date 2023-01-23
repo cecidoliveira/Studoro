@@ -1,5 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react';
 
+import "../styles/global.css"
 import Conf from "./Conf/Conf";
 import Temp from "./Count/Temp";
 import Task from "./Task/Task";

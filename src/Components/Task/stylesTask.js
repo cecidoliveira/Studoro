@@ -3,9 +3,6 @@ import styled from "styled-components";
 export const DivTask = styled.div`
     background-color: #691110;
     max-width: 441px;
-    @media only screen and (max-width: 400px) {
-        max-width: 310px;
-    }
 `;
 
 export const DivTaskHeader = styled.div`
@@ -57,13 +54,17 @@ export const DivList = styled(DivTaskHeader)`
         color: #ffffff;
         font-size: 30px;
     }
+    @media only screen and (max-width: 768px) {
+        height: 90vh;
+    }
 
     @media only screen and (min-width: 1900px) {
         height: 85vh;
     }
     
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 426px) {
         height: 65vh;
+        margin-bottom: 10px;
     }
 
     /* scroll */

@@ -8,22 +8,20 @@ export const DivConf = styled.div`
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
-    @media only screen and (max-width: 400px) {
-        height: 70%;
+    @media only screen and (max-width: 426px) {
+        margin:  20px 5px; 
     }
 `;
 
 export const Title = styled.h2`
     color: #B71D1D;
-    font-size: 40px;
+    font-size: 34px;
     font-weight: 600;
     text-align: center;
+
     @media only screen and (min-width: 1600px) {
         font-size: 50px;
-    }
-    @media only screen and (max-width: 400px) {
-        font-size: 55px;
-    }
+    } 
 `;
 
 export const Button = styled.button`
