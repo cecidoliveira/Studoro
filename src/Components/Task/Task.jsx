@@ -1,6 +1,6 @@
 import { IconButton, Checkbox, useToast } from '@chakra-ui/react';
 import { AddIcon, DeleteIcon} from '@chakra-ui/icons';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { DivButtons, DivList, DivTask, DivTaskHeader, Title } from './stylesTask';
 import { useTaskStore } from '../../Store/Task';
@@ -8,6 +8,8 @@ import SelectTdTasks from './SelectTdTasks';
 import ModalTask from './ModalTask';
 
 function Task(){
+    const [isMob, setIsMob] = useState(false);
+    useEffect(()=> {window.screen.width < 450 ? setIsMob(true) : setIsMob(false)},[]);
     const [open, setOpen] = useState(false);
     const toast = useToast();
 
@@ -34,14 +36,14 @@ function Task(){
         checkTask(id)
 
         const checked = tasks.filter((tk)=> tk.ischecked == true)
-        if(checked.length > 3 && isSelect === false){
+        if(checked.length > 3 && isSelect === false && isMob === false){
             toggleSelect() 
         }
     }
 
     return(
         <DivTask>
-        {selectTasks === true ? <SelectTdTasks/> : <></>}
+        {selectTasks && <SelectTdTasks/>}
         <ModalTask isOpen={open} onClose={()=> setOpen(false)}/>
         
         <DivTaskHeader>
