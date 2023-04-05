@@ -1,9 +1,11 @@
 ![image](https://user-images.githubusercontent.com/108581198/230051723-7975c5f9-cd5a-4910-9bbf-416626b9b331.png)
 
+
 Projeto criado com o objetivo de atraves do metodo de estudo Pomodoro realizar e facilitar a organização de uma ou mais tarefas
 a serem concluidas.
 
-&nbsp;
+[![badge studoro](https://user-images.githubusercontent.com/108581198/230067291-0a37f380-d7f5-40f5-8ea5-5a031ed06e69.png)](https://studoro.vercel.app/)
+
 
 > O Método Pomodoro é uma técnica de gestão de tempo que tem como objetivo aumentar a produtividade e facilitar a concentração nas tarefas, 
 dividindo o tempo para realização das tarefas a cada 25 minutos, com pausas curtas a cada 3 pomodoros (25 min) passados.
